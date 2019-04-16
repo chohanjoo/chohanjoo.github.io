@@ -40,7 +40,7 @@ A key scalability feature of Ceph
 
 ​	-> to avoid a centralized interface to Ceph object store
 
-​		-> Cph clients must be able to interact with OSDs directly
+​		-> Ceph clients must be able to interact with OSDs directly
 
 
 cephx authentication system
