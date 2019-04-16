@@ -202,3 +202,72 @@ if (_need_tickets()) {
 }
 ```
 
+
+
+### - 경로 : ceph/src/auth/cephx/CephxProtocol.h
+
+```c++
+struct CephXTicketHandler {
+uint32_t service_id;
+CryptoKey session_key;
+CephXTicketBlob ticket;        // opaque to us
+utime_t renew_after, expires;
+bool have_key_flag;
+
+CephXTicketHandler(CephContext *cct_, uint32_t service_id_)
+: service_id(service_id_), have_key_flag(false), cct(cct_) { }
+
+// to build our ServiceTicket
+bool verify_service_ticket_reply(CryptoKey& principal_secret,
+bufferlist::const_iterator& indata);
+// to access the service
+CephXAuthorizer *build_authorizer(uint64_t global_id) const;
+
+bool have_key();
+bool need_key() const;
+
+void invalidate_ticket() {
+have_key_flag = 0;
+}
+private:
+CephContext *cct;
+};
+```
+
+
+
+### - 경로 : ceph/src/auth/cephx/CephxProtocol.cc
+
+```c++
+/*
+* PRINCIPAL: build authorizer to access the service.
+*
+* ticket, {timestamp}^session_key
+*/
+CephXAuthorizer *CephXTicketHandler::build_authorizer(uint64_t global_id) const
+{
+CephXAuthorizer *a = new CephXAuthorizer(cct);
+a->session_key = session_key;
+cct->random()->get_bytes((char*)&a->nonce, sizeof(a->nonce));
+
+__u8 authorizer_v = 1; // see AUTH_MODE_* in Auth.h
+encode(authorizer_v, a->bl);
+encode(global_id, a->bl);
+encode(service_id, a->bl);
+
+encode(ticket, a->bl);
+a->base_bl = a->bl;
+
+CephXAuthorize msg;
+msg.nonce = a->nonce;
+
+std::string error;
+if (encode_encrypt(cct, msg, session_key, a->bl, error)) {
+ldout(cct, 0) << "failed to encrypt authorizer: " << error << dendl;
+delete a;
+return 0;
+}
+return a;
+}
+```
+
