@@ -111,6 +111,55 @@ auth supported = cephx
 
 8. Start or restart the Ceph cluster. See [Operating a Cluster](http://docs.ceph.com/docs/emperor/rados/operations/operating) for details.
 
+
+
+### DAEMON KEYRINGS
+
+모니터를 제외하고 Ceph는 사용자 키 링을 생성하는 것과 같은 방법으로 데몬 키 링을 생성합니다. 
+기본적으로 데몬은 키링을 데이터 디렉토리에 저장합니다. 기본 키링 위치와 데몬이 작동하는 데 필요한 기능은 다음과 같습니다.
+
+- ceph-mon
+
+  ​	Location : $mon_data/keyring
+
+  ​	Capabilities : N/A
+
+- ceph-osd
+
+  ​	Location : $osd_data/keyring
+
+  ​	Capabilities : mon 'allow rwx' osd 'allow *'
+
+- ceph-mds
+
+  ​	Location : $mds_data/keyring
+
+  ​	Capabilities : mds 'allow rwx' mds 'allow * osd 'allow *'
+
+- radosgw
+
+  ​	Location : $rgw_data/keyring
+
+  ​	mon 'allow rw' osd 'allow rwx'
+
+
+
+Note that the monitor keyring contains a key but no capabilities, and is not part of the cluster `auth` database.
+
+The daemon data directory locations default to directories of the form:
+
+```
+/var/lib/ceph/$type/$cluster-$id
+```
+
+For example, `osd.12` would be:
+
+```
+/var/lib/ceph/osd/ceph-12
+```
+
+
+
 ---
 
 참고문헌
