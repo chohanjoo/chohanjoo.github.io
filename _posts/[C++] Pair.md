@@ -1,3 +1,12 @@
+---
+layout: post
+title:  "[STL] Pair"
+date:   2019-05-01 23:40:00
+author: Hanjoo Cho
+categories: Algorithm
+tags:    Pair STL
+cover:  "/assets/instacode.png"
+---
 # [c++] pair
 
 
