@@ -10,7 +10,7 @@ What microservices are part of my Istio service mesh amd how are they connected?
 
 
 Kiali works with Istio to visualise the service mesh topology, features like circuit breakers or request rates.
-Kiali는 Istio와 협력하여 회로 차단기 또는 요청 속도와 같은 기능 메쉬 토폴로지를 시각화합니다.
+Kiali는 Istio와 협력하여 회로 차단기 또는 요청 속도와 같은 서비스 메쉬 토폴로지를 시각화합니다.
 
 
 
@@ -56,9 +56,9 @@ Kiali는 Prometheus와 Cluster API를 통해 노출되는 Istio 데이터와 구
 
 
 
-### Promethus
+### Prometheus
 
-Promethus는 Istio 종속성입니다. Istio 원격 측정 기능이 활성화되면 메트릭 데이터가 Prometheus에 저장됩니다. Kiali는 Prometheus에 저장된 데이터를 사용하여 메쉬 토폴로지를 파악하고 메트릭을 표시하며 상태를 계산하고 가능한 문제(지표)를 표시합니다.
+Prometheus는 Istio 종속성입니다. Istio 원격 측정 기능이 활성화되면 메트릭 데이터가 Prometheus에 저장됩니다. Kiali는 Prometheus에 저장된 데이터를 사용하여 메쉬 토폴로지를 파악하고 메트릭을 표시하며 상태를 계산하고 가능한 문제(지표)를 표시합니다.
 
 Kiali는 Prometheus와 직접 통신하고 Istio Telemetery에서 사용하는 데이터 스키마를 사용합니다. 그것은 Kiali에 대한 의존성이 크며, 대부분의 기능은 Kiali 없이는 작동하지 않습니다.
 
