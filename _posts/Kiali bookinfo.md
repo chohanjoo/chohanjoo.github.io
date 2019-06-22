@@ -21,11 +21,9 @@ Bookinfo 애플리케이션은 네 가지 개별 마이크로 서비스로 구�
 
 
 
-애플리케이션의 엔드투엔드 아키텍처는 아래와 같다.
+애플리케이션의 end to end 아키텍처는 아래와 같다.
 
-![noistio](/Users/hanjoo/github_blog/assets/image/istio/noistio.svg)
-
-
+![noistio](/Users/hanjoo/github_blog/assets/image/istio/booinfo/noistio.svg)
 
 이 애플리케이션은 polyglot이다. 즉, 마이크로서비스는 서로 다른 언어로 작성된다.
 이러한 서비스는 Istio에 의존하지 않지만, 특히 리뷰 서비스에 대한 다수의 서비스, 언어 및 버전 때문에 흥미로운 서비스 메시 예를 들 수 있다.
@@ -34,7 +32,7 @@ Bookinfo 애플리케이션은 네 가지 개별 마이크로 서비스로 구�
 
 Istio로 샘플을 실행하려면 애플리케이션 자체를 변경할 필요가 없다. 대신에, 우리는 단지 각 서비스 편을 따라 특수 사이드카를 투입하여 Istio가 활성화된 환경에서 서비스를 구성하고 실행하기만 하면 된다. 필요한 명령과 구성은 런타임 환경에 따라 다르지만 모든 경우 다음과 같이 배치된다.
 
-![withistio](/Users/hanjoo/github_blog/assets/image/istio/withistio.svg)
+![withistio](/Users/hanjoo/github_blog/assets/image/istio/booinfo/withistio.svg)
 
 
 
@@ -54,6 +52,8 @@ Istio로 샘플을 실행하려면 애플리케이션 자체를 변경할 필요
 $ kubectl label namespace default istio-injection=enabled
 ~~~
 
+![Screenshot from 2019-06-22 14-59-28](/Users/hanjoo/github_blog/assets/image/istio/booinfo/Screenshot from 2019-06-22 14-59-28.png)
+
 
 
 ###3. kubectl 명령을 사용하여 애플리케이션 배포
@@ -62,9 +62,11 @@ $ kubectl label namespace default istio-injection=enabled
 $ kubectl apply -f samples/bookinfo/platform/kube/bookinfo.yaml
 ~~~
 
-이 명령은 bookinfo 애플리케이션 아키텍처 다이어그램에 표시된 네 가지 서비스를 모두 시작합니다. 리뷰 서비스 v1, v2 및 v3의 3 가지 버전이 모두 시작됩니다.
+![Screenshot from 2019-06-22 14-59-40](/Users/hanjoo/github_blog/assets/image/istio/booinfo/Screenshot from 2019-06-22 14-59-40.png)이 명령은 bookinfo 애플리케이션 아키텍처 다이어그램에 표시된 네 가지 서비스를 모두 시작합니다. 리뷰 서비스 v1, v2 및 v3의 3 가지 버전이 모두 시작됩니다.
 
 > 실제 배포에서는 모든 버전을 동시에 배포하지 않고 시간이 지남에 따라 새로운 버전의 마이크로 서비스가 배포됩니다.
+
+
 
 ### 4. 모든 services 및 Pods 가 올바르게 정의되어 실행 중인지 확인
 
@@ -72,9 +74,13 @@ $ kubectl apply -f samples/bookinfo/platform/kube/bookinfo.yaml
 $ kubectl get services
 ~~~
 
+![Screenshot from 2019-06-22 15-00-21](/Users/hanjoo/github_blog/assets/image/istio/booinfo/Screenshot from 2019-06-22 15-00-21.png)
+
 ~~~
 $ kubectl get pods
 ~~~
+
+![Screenshot from 2019-06-22 15-00-32](/Users/hanjoo/github_blog/assets/image/istio/booinfo/Screenshot from 2019-06-22 15-00-32.png)
 
 
 
@@ -83,6 +89,8 @@ $ kubectl get pods
 ~~~
 $ kubectl exec -it $(kubectl get pod -l app=ratings -o jsonpath='{.items[0].metadata.name}') -c ratings -- curl productpage:9080/productpage | grep -o "<title>.*</title>"
 ~~~
+
+![Screenshot from 2019-06-22 15-00-48](/Users/hanjoo/github_blog/assets/image/istio/booinfo/Screenshot from 2019-06-22 15-00-48.png)
 
 
 
@@ -96,6 +104,8 @@ $ kubectl exec -it $(kubectl get pod -l app=ratings -o jsonpath='{.items[0].meta
 $ kubectl apply -f samples/bookinfo/networking/bookinfo-gateway.yaml
 ~~~
 
+![Screenshot from 2019-06-22 15-01-07](/Users/hanjoo/github_blog/assets/image/istio/booinfo/Screenshot from 2019-06-22 15-01-07.png)
+
 
 
 ###7. 게이트웨이가 만들어졌는지 확인
@@ -103,6 +113,8 @@ $ kubectl apply -f samples/bookinfo/networking/bookinfo-gateway.yaml
 ~~~
 $ kubectl get gateway
 ~~~
+
+![Screenshot from 2019-06-22 15-01-27](/Users/hanjoo/github_blog/assets/image/istio/booinfo/Screenshot from 2019-06-22 15-01-27.png)
 
 
 
@@ -112,7 +124,7 @@ $ kubectl get gateway
 $ kubectl get svc istio-ingressgateway -n istio-system
 ~~~
 
-
+![Screenshot from 2019-06-22 15-01-44](/Users/hanjoo/github_blog/assets/image/istio/booinfo/Screenshot from 2019-06-22 15-01-44.png)
 
 EXTERNAL-IP 값을 설정한 경우 사용자 환경에는 수신 게이트웨이에 사용할 수 있는 외부 로드 밸런서가 있다. EXTERNAL-IP 값이 <none>(또는 영구 <pending>인 경우, 사용자 환경은 수신 게이트웨이에 외부 로드 밸런서를 제공하지 않는다. 이 경우 서비스의 노드 포트를 사용하여 게이트웨이에 액세스할 수 있다.
 
@@ -127,6 +139,8 @@ EXTERNAL-IP 값을 설정한 경우 사용자 환경에는 수신 게이트웨�
 $ export INGRESS_PORT=$(kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.spec.ports[?(@.name=="http2")].nodePort}')
 $ export SECURE_INGRESS_PORT=$(kubectl -n istio-system get service istio-ingressgateway -o jsonpath='{.spec.ports[?(@.name=="https")].nodePort}')
 ~~~
+
+![Screenshot from 2019-06-22 15-02-09](/Users/hanjoo/github_blog/assets/image/istio/booinfo/Screenshot from 2019-06-22 15-02-09.png)
 
 
 
@@ -156,7 +170,7 @@ $ export GATEWAY_URL=$INGRESS_HOST:$INGRESS_PORT
 $ curl -s http://${GATEWAY_URL}/productpage | grep -o "<title>.*</title>"
 ~~~
 
-
+![Screenshot from 2019-06-22 15-02-32](/Users/hanjoo/github_blog/assets/image/istio/booinfo/Screenshot from 2019-06-22 15-02-32.png)
 
 당신은 또한 Booinfo 웹 페이지를 보기 위해 당신의 브라우저를 http://$GATEWAY_URL/productpage으로 가리킬 수 있다. 페이지를 여러 번 새로 고치면, 아직 버전 라우팅을 제어하기 위해 Istio를 사용하지 않았기 때문에 라운드 로빈 스타일(빨간색 별, 검은 별, 별 없음)으로 표시된 다양한 버전의 리뷰를 제품 페이지에 볼 수 있을 것이다.
 
@@ -174,9 +188,9 @@ Istio를 사용하여 Booinfo 버전 라우팅을 제어하기 전에 대상 규
 $ kubectl apply -f samples/bookinfo/networking/destination-rule-all-mtls.yaml
 ~~~
 
-몇 초만 기다리면...
+![Screenshot from 2019-06-22 15-02-52](/Users/hanjoo/github_blog/assets/image/istio/booinfo/Screenshot from 2019-06-22 15-02-52.png)몇 초만 기다리면...
 
-
+![Screenshot from 2019-06-22 15-00-10](/Users/hanjoo/github_blog/assets/image/istio/booinfo/Screenshot from 2019-06-22 15-00-10.png)
 
 ### 14. destination rules 확인
 
@@ -194,19 +208,43 @@ $ kubectl get destinationrules -o yaml
 
 Bookinfo 샘플 애플리케이션을 예제로 사용한다.
 
+##Generating a service graph
+
+###15. 클러스터에서 서비스가 실행 중인지 확인
+
 ~~~
 $ kubectl -n istio-system get svc kiali
 ~~~
+
+![Screenshot from 2019-06-22 15-03-28](/Users/hanjoo/github_blog/assets/image/istio/booinfo/Screenshot from 2019-06-22 15-03-28.png)
+
+###16. send traffic to the mesh
 
 ~~~
 $ curl http://$GATEWAY_URL/productpage
 ~~~
 
 ~~~
+http://$GATEWAY_URL/productpage
+~~~
+
+![1561183855610](/Users/hanjoo/github_blog/assets/image/istio/booinfo/1561183855610.png)
+
+###17. open the Kiali UI
+
+~~~
 $ kubectl -n istio-system port-forward $(kubectl -n istio-system get pod -l app=kiali -o jsonpath='{.items[0].metadata.name}') 20001:20001
 ~~~
 
-[http://localhost:20001/kiali/console](http://localhost:20001/kiali/console)
+~~~
+http://localhost:20001/kiali/console 
+~~~
+
+![Screenshot from 2019-06-22 15-03-49](/Users/hanjoo/github_blog/assets/image/istio/booinfo/Screenshot from 2019-06-22 15-03-49.png)
+
+
+
+http://localhost:20001/kiali/console](http://localhost:20001/kiali/console)
 
 
 
