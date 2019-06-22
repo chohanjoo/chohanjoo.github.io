@@ -20,13 +20,13 @@
 아래 명령어의 첫 줄을 변경하여 GOPATH를 사용하십시오.
 
 ```
-$ export GOPATH=/source/kiali/kiali
-$ mkdir -p $GOPATH
-$ cd $GOPATH
-$ mkdir -p src/github.com/kiali
-$ cd src/github.com/kiali
-$ git clone https://github.com/chohanjoo/kiali.git
-$ export PATH=${PATH}:${GOPATH}/bin
+# export GOPATH=/source/kiali/kiali
+# mkdir -p $GOPATH
+# cd $GOPATH
+# mkdir -p src/github.com/kiali
+# cd src/github.com/kiali
+# git clone https://github.com/chohanjoo/kiali.git
+# export PATH=${PATH}:${GOPATH}/bin
 ```
 
 
@@ -36,8 +36,8 @@ $ export PATH=${PATH}:${GOPATH}/bin
 Kiali가 자체적으로 구축하기 위해 사용하는 Go 종속성 관리 도구이다.
 
 ```
-$ cd ${GOPATH}/src/github.com/kiali/kiali
-$ make dep-install
+# cd ${GOPATH}/src/github.com/kiali/kiali
+# make dep-install
 ```
 
 
@@ -53,8 +53,8 @@ $ make dep-install
 Kiali container Image, Kiali operator Image를 생성한다. 
 
 ```
-$ cd ${GOPATH}/src/github.com/kiali/kiali
-$ make docker-build
+# cd ${GOPATH}/src/github.com/kiali/kiali
+# make docker-build
 ```
 
 
@@ -104,6 +104,8 @@ $ make kiali-create
 
 
 
+![kiali-create](/Users/hanjoo/github_blog/assets/image/Kiali/kiali-create.png)
+
 
 
 ### 6. create account
@@ -122,7 +124,12 @@ $ kubectl -n istio-system port-forward $(kubectl -n istio-system get pod -l app=
 
 
 
-![kiali ui](/Users/hanjoo/Downloads/kiali install from source/kiali ui.png)
+![kiali ui](/Users/hanjoo/github_blog/assets/image/Kiali/kiali ui.png)
 
 
 
+---
+
+출처
+
+https://github.com/chohanjoo/kiali
