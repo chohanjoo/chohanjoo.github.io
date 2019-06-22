@@ -25,7 +25,7 @@ $ mkdir -p $GOPATH
 $ cd $GOPATH
 $ mkdir -p src/github.com/kiali
 $ cd src/github.com/kiali
-$ git clone https://github.com/kiali/kiali.git
+$ git clone https://github.com/chohanjoo/kiali.git
 $ export PATH=${PATH}:${GOPATH}/bin
 ```
 
@@ -42,6 +42,8 @@ $ make dep-install
 
 
 
+![deb-install](/Users/hanjoo/github_blog/assets/image/Kiali/deb-install.png)
+
 
 
 ## Running
@@ -57,15 +59,27 @@ $ make docker-build
 
 
 
+![Screenshot from 2019-06-21 10-56-26](/Users/hanjoo/github_blog/assets/image/Kiali/Screenshot from 2019-06-21 10-56-26.png)
+
+![docker-build](/Users/hanjoo/github_blog/assets/image/Kiali/docker-build.png)
+
+
+
 ###4. Deploying Kiali Operator
 
 Kiali operator를 먼저 설치해야한다.
-이 작업은 한 번만 수행하면됩니다. **operator가 배포 된 후에는 Kiali를 여러 번 배포하고 제거 할 수 있습니다.**
+이 작업은 한 번만 수행하면됩니다. **operator가 배포 된 후에는 Kiali를 여러 번 배포하고 제거할 수 있습니다.**
 
 ```
 $ cd ${GOPATH}/src/github.com/kiali/kiali/operator
 $ make operator-create
 ```
+
+
+
+![operator-create](/Users/hanjoo/github_blog/assets/image/Kiali/operator-create.png)
+
+![operator-create_2](/Users/hanjoo/github_blog/assets/image/Kiali/operator-create_2.png)
 
 
 
@@ -79,12 +93,16 @@ $ make operator-create
 $ /usr/bin/kubectl apply -n kiali-operator -f https://raw.githubusercontent.com/kiali/kiali/master/operator/deploy/kiali/kiali_cr.yaml
 ~~~
 
+![create-kiali-default](/Users/hanjoo/github_blog/assets/image/Kiali/create-kiali-default.png)
+
 만약 리소스 파일을 커스텀하여 Kiali를 설치하려면 다음 명령어를 사용한다.
 
 ~~~
 $ cd ${GOPATH}/src/github.com/kiali/kiali/operator
 $ make kiali-create
 ~~~
+
+
 
 
 
@@ -96,15 +114,15 @@ $ /usr/bin/kubectl create secret generic kiali -n istio-system --from-literal 'u
 
 
 
-```
-export GOPATH=/source/kiali/kiali
-mkdir -p $GOPATH
-cd $GOPATH
-mkdir -p src/github.com/kiali
-cd src/github.com/kiali
-git clone https://github.com/kiali/kiali.git
-export PATH=${PATH}:${GOPATH}/bin
-```
+### 7. open Kiali UI
+
+~~~
+$ kubectl -n istio-system port-forward $(kubectl -n istio-system get pod -l app=kiali -o jsonpath='{.items[0].metadata.name}') 20001:20001
+~~~
+
+
+
+![kiali ui](/Users/hanjoo/Downloads/kiali install from source/kiali ui.png)
 
 
 
