@@ -42,7 +42,7 @@ Kiali가 자체적으로 구축하기 위해 사용하는 Go 종속성 관리 �
 
 
 
-![deb-install](/Users/hanjoo/github_blog/assets/image/Kiali/deb-install.png)
+![deb-install](assets/image/Kiali/deb-install.png)
 
 
 
