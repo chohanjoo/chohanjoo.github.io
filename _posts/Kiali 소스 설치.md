@@ -42,7 +42,7 @@ Kiali가 자체적으로 구축하기 위해 사용하는 Go 종속성 관리 �
 
 
 
-![deb-install](assets/image/Kiali/deb-install.png)
+![deb-install](/assets/image/Kiali/deb-install.png)
 
 
 
@@ -59,9 +59,9 @@ Kiali container Image, Kiali operator Image를 생성한다.
 
 
 
-![Screenshot from 2019-06-21 10-56-26](/Users/hanjoo/github_blog/assets/image/Kiali/Screenshot from 2019-06-21 10-56-26.png)
+![Screenshot from 2019-06-21 10-56-26](/assets/image/Kiali/Screenshot from 2019-06-21 10-56-26.png)
 
-![docker-build](/Users/hanjoo/github_blog/assets/image/Kiali/docker-build.png)
+![docker-build](/assets/image/Kiali/docker-build.png)
 
 
 
@@ -77,9 +77,9 @@ $ make operator-create
 
 
 
-![operator-create](/Users/hanjoo/github_blog/assets/image/Kiali/operator-create.png)
+![operator-create](/assets/image/Kiali/operator-create.png)
 
-![operator-create_2](/Users/hanjoo/github_blog/assets/image/Kiali/operator-create_2.png)
+![operator-create_2](/assets/image/Kiali/operator-create_2.png)
 
 
 
@@ -93,7 +93,7 @@ $ make operator-create
 $ /usr/bin/kubectl apply -n kiali-operator -f https://raw.githubusercontent.com/kiali/kiali/master/operator/deploy/kiali/kiali_cr.yaml
 ~~~
 
-![create-kiali-default](/Users/hanjoo/github_blog/assets/image/Kiali/create-kiali-default.png)
+![create-kiali-default](/assets/image/Kiali/create-kiali-default.png)
 
 만약 리소스 파일을 커스텀하여 Kiali를 설치하려면 다음 명령어를 사용한다.
 
@@ -104,7 +104,7 @@ $ make kiali-create
 
 
 
-![kiali-create](/Users/hanjoo/github_blog/assets/image/Kiali/kiali-create.png)
+![kiali-create](/assets/image/Kiali/kiali-create.png)
 
 
 
@@ -124,7 +124,7 @@ $ kubectl -n istio-system port-forward $(kubectl -n istio-system get pod -l app=
 
 
 
-![kiali ui](/Users/hanjoo/github_blog/assets/image/Kiali/kiali ui.png)
+![kiali ui](/assets/image/Kiali/kiali ui.png)
 
 
 
