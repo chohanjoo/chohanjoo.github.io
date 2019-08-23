@@ -59,7 +59,7 @@ Kiali container Image, Kiali operator Image를 생성한다.
 
 
 
-![Screenshot from 2019-06-21 10-56-26](/assets/image/Kiali/Screenshot from 2019-06-21 10-56-26.png)
+![Screenshot from 2019-06-21 10-56-26](/assets/image/Kiali/docker-build_0.png)
 
 ![docker-build](/assets/image/Kiali/docker-build.png)
 
@@ -124,7 +124,7 @@ $ kubectl -n istio-system port-forward $(kubectl -n istio-system get pod -l app=
 
 
 
-![kiali ui](/assets/image/Kiali/kiali ui.png)
+![kiali ui](/assets/image/Kiali/kiali_ui.png)
 
 
 
