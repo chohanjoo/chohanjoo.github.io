@@ -50,13 +50,13 @@ author:
 # Add links to the sidebar.
 menu:
   - title:             Cloud
-    url:               /Cloud/
+    url:               /cloud/
   - title:             Kubernetes
-    url:               /Kubernetes/
+    url:               /kubernetes/
   - title:             Sanic
-    url:               /Sanic/
+    url:               /sanic/
   - title:             Algorithm
-    url:               /Algorithm/
+    url:               /algorithm/
   - title:             Documentation
     url:               /docs/
   - title:             About
