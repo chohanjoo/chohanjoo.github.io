@@ -1,7 +1,7 @@
 ---
 layout: list
-title: Hyde
-slug: hyde
+title: cloud
+slug: cloud
 menu: true
 order: 2
 description: >

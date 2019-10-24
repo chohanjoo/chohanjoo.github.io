@@ -1,7 +1,7 @@
 ---
 layout: list
-title: Hydejack
-slug: hydejack
+title: Kubernetes
+slug: kubernetes
 menu: true
 order: 1
 description: >

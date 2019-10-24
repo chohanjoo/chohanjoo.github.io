@@ -53,8 +53,8 @@ menu:
     url:               /Cloud/
   - title:             Kubernetes
     url:               /Kubernetes/
-  - title:             sanic
-    url:               /sanic/
+  - title:             Sanic
+    url:               /Sanic/
   - title:             Algorithm
     url:               /Algorithm/
   - title:             Documentation
