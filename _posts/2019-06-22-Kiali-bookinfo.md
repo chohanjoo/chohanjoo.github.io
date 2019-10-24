@@ -1,3 +1,10 @@
+---
+layout: post
+title:  "Kiali boookinfo Applecation"
+date:   2019-06-22 15:00:00
+tags:    [Cloud, Istio, Kiali]
+comments: true
+---
 # Kiali boookinfo Applecation
 
 

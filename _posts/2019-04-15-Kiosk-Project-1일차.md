@@ -2,10 +2,8 @@
 layout: post
 title:  "Kiosk 프로젝트 - 1일차"
 date:   2019-04-15 21:00:00
-author: Hanjoo Cho
-categories: Kiosk
-tags:    Kiosk Project
-cover:  "/assets/instacode.png"
+tags:    [Kiosk, Project]
+comments: true
 ---
 # Kiosk 개발 프로젝트 1일차
 

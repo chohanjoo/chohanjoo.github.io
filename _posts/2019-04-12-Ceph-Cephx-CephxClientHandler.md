@@ -2,10 +2,8 @@
 layout: post
 title:  "Cephx - CephxClientHandler 코드 분석"
 date:   2019-04-12 15:01:59
-author: Hanjoo Cho
-categories: Cloud
-tags:    Cloud Ceph
-cover:  "/assets/instacode.png"
+tags:    [Cloud, Ceph]
+comments: true
 ---
 # Ceph 코드 분석 - cephx
 

@@ -2,10 +2,8 @@
 layout: post
 title:  "[STL] Vector"
 date:   2019-04-30 17:40:00
-author: Hanjoo Cho
-categories: Algorithm
-tags:    Vector STL
-cover:  "/assets/instacode.png"
+tags:    [Vector, STL]
+comments: true
 ---
 # [STL] Vector
 

@@ -2,10 +2,8 @@
 layout: post
 title:  "Cephx Authentication"
 date:   2019-04-18 18:15:59
-author: Hanjoo Cho
-categories: Cloud
-tags:    Cloud Ceph
-cover:  "/assets/instacode.png"
+tags:    [Cloud, Ceph]
+comments: true
 ---
 
 # Cephx Authentication

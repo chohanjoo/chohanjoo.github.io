@@ -2,10 +2,8 @@
 layout: post
 title:  "Ceph란?"
 date:   2019-04-08 15:54:59
-author: Hanjoo Cho
-categories: Cloud
-tags:    Cloud
-cover:  "/assets/instacode.png"
+tags:    [Cloud]
+comments: true
 ---
 
 # Ceph
