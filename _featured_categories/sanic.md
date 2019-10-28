@@ -1,7 +1,7 @@
 ---
 layout: list
 title: Sanic
-slug: Sanic
+slug: sanic
 menu: true
 order: 1
 description: >
