@@ -7,7 +7,7 @@ author: Joo
 noindex: true
 ---
 
-# Sanic
+# Sanic 시작하기
 
 Sanic은 Python 3.6 이상의 웹 서버 및 웹 프레임워크로, 빠르게 실행되도록 작성되었다. Python 3.5에 추가된 async/await 구문을 사용할 수 있어 코드를 차단하지 않고 빠르게 사용할 수 있다.
 

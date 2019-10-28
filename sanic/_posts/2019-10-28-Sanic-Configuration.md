@@ -7,7 +7,7 @@ author: Joo
 noindex: true
 ---
 
-# Configuration
+# Sanic - Configuration
 
 Sanic은 응용 프로그램 객체의 config 속성에서 구성을 유지합니다.
 

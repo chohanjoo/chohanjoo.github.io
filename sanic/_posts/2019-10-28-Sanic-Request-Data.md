@@ -7,7 +7,7 @@ author: Joo
 noindex: true
 ---
 
-# Request Data
+# Sanic - Request Data
 
 엔드 포인트가 HTTP 요청을 수신하면 라우트 함수에 요청 오브젝트가 전달됩니다.
 

@@ -7,7 +7,7 @@ author: Joo
 noindex: true
 ---
 
-# Examples
+# Sanic - Examples
 
 ### Simple Apps
 
