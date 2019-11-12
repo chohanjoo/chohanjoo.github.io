@@ -1,6 +1,6 @@
 ---
 layout: list
-title: cloud
+title: Cloud
 slug: cloud
 menu: true
 order: 2
