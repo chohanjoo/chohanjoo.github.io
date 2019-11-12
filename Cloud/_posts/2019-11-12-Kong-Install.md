@@ -3,6 +3,7 @@ layout: post
 title: Kong 설치
 description: >
   Kong , Konga 설치
+noindex: true
 ---
 # Kong 설치
 

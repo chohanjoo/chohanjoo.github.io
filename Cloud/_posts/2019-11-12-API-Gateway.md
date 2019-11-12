@@ -3,6 +3,7 @@ layout: post
 title: API Gateway
 description: >
   API Gateway란?
+noindex: true
 ---
 # API Gateway
 
