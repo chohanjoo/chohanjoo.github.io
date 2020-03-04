@@ -9,7 +9,7 @@ subtitle:
 description:
 author: Hanjoo Cho
 # Support language: de, en, fr-FR, id, ja, ko, pt-BR, pt, ru, zh-Hans, zh-hk, zh-tw
-language: ko
+language: en
 date_format: '%Y-%m-%d'
 
 # URL
@@ -79,12 +79,12 @@ plugins:
 favicon: /assets/favicon.ico
 
 # Set default keywords (Use a comma to separate)
-keywords: "Jekyll, NexT"
+keywords: "Cloud, Kubernetes"
 
 # Set rss to false to disable feed link.
 # Leave rss as empty to use site's feed link.
 # Set rss to specific value if you have burned your feed already.
-rss:
+# rss:
 
 # Specify the date when the site was setup
 #since: 2015
@@ -214,7 +214,7 @@ font:
 # Key is the link label showing to end users.
 # Value is the target link (E.g. GitHub: https://github.com/iissnan)
 social:
-  LinkLabel: Link
+  Github: https://github.com/chohanjoo
 
 
 # Social Links Icons
@@ -233,7 +233,8 @@ social_icons:
 
 # Sidebar Avatar
 # in directory: /assets/images/avatar.gif
-#avatar:
+avatar:
+  /assets/images/avatar.jpeg
 
 
 # Table Of Contents in the Sidebar
