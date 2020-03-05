@@ -14,3 +14,10 @@ type: about
 
 **2020.01.13 - 04.13	::	NAVER Corporation Data Pipeline 인턴**
 
+
+
+## Projects
+
+
+
+## Awards
