@@ -3,9 +3,11 @@ layout: page
 type: about
 ---
 
-# Hanjoo Cho
 
-- [`Email`](johanjoo@naver.com)
+
+## Links
+
+- `Email` : johanjoo@naver.com
 - [`Github`](https://github.com/chohanjoo)
 
 
