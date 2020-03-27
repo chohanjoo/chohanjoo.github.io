@@ -40,9 +40,7 @@ pod가 재시작될 때는 volume을 계속 참조하기 때문에 데이터 영
 Persistent storage에 동적으로 프로비젼 시키는 설정이다
 
 (1). 사용자가 pod에서 사용할 persistent volume이 필요한 경우 kubernetes를 통해서 PersistentVolumeClaim을 생성한다.
-
 (2). Kubernetes API server에게 PersistentVolumeClaim을 넘겨준다.
-
 (3). Kubernetes는 적합한 PersistentVolume을 찾고 PersistentVolumeClaim과 바인딩 시킨다.
     그리고 나서 pod에서는 PersistentVolumeClaim을 통해서 volume을 설정할 수 있다.
 
