@@ -46,7 +46,7 @@ Persistent storage에 동적으로 프로비젼 시키는 설정이다
 (3). Kubernetes는 적합한 PersistentVolume을 찾고 PersistentVolumeClaim과 바인딩 시킨다.
     그리고 나서 pod에서는 PersistentVolumeClaim을 통해서 volume을 설정할 수 있다.
 
-![mysql](/Users/hj/chohanjoo.github.io/assets/images/sns/mysql.png)
+![mysql](/assets/images/sns/mysql.png)
 
 
 
