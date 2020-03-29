@@ -34,10 +34,10 @@ tags:
 ### dependency
 
 ~~~xml
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-zuul</artifactId>
-		</dependency>
+<dependency>
+  <groupId>org.springframework.cloud</groupId>
+  <artifactId>spring-cloud-starter-netflix-zuul</artifactId>
+</dependency>
 ~~~
 
 ### application-dev.yml
