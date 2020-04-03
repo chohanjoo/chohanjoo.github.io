@@ -96,7 +96,7 @@ $ kubectl label namespace default istio-injection=enabled
 $ istioctl dashboard kiali
 ~~~
 
-
+defalut ID, PW 는 `id : admin` , `pw : admin` 이다.
 
 ---
 
