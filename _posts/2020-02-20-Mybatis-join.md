@@ -69,8 +69,8 @@ public class BBBDto {
 ~~~xml
 <resultMap id="aaaListMap" type="AAADto">
 	<id property="a_id_1" column="a_id_1"/>
-    <result column="a_2" column="a_2"/>
-    <collection property="bbbDto" resultMap="BBBDto" orType="java.util.ArrayList" />
+    <result column="a_2" property="a_2"/>
+    <collection property="bbbDto" resultMap="bbbListMap" ofType="java.util.ArrayList" />
 </resultMap>
 
 <resultMap id="bbbListMap" type="BBBDto">
