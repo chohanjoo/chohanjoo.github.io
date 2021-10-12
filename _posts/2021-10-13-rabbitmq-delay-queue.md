@@ -53,3 +53,12 @@ docker build -t chohanjoo/rabbitmq:3.8 .
 
 docker run -d --name rabbitmq -p 5672:5672 -p 25672:15672 --restart=unless-stopped chohanjoo/rabbitmq:3.8
 ```
+
+`rabbitmq_delayed_message_exchange` 에 대한 설명은 해당 [[RabbitMQ] 간단 지연 큐(delayed queue) 설정](https://blog.leocat.kr/notes/2018/07/31/rabbitmq-delayed-queue) 를 참고한다.
+
+<br/>
+<br/>
+
+**참고**
+
+[How to add plugin to RabbitMQ docker image?](https://stackoverflow.com/questions/52819237/how-to-add-plugin-to-rabbitmq-docker-image)
